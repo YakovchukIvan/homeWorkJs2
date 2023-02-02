@@ -204,7 +204,67 @@
 // Task 7
 
 
+// let number = +prompt("Введіть суму до оплати та подивіться яку знижку ви отримаєте: ");
+
+// let discount1 = (number / 100) * 3;
+// let discount2 = (number / 100) * 5;
+// let discount3 =(number / 100) * 7;
+// console.log(discount1.toFixed(2));
+// console.log(discount2.toFixed(2));
+// console.log(discount3.toFixed(2));
 
 
 
+// if (number >= 200 && number < 300) {
+//     console.log(`Ваша знижка буде ${discount1.toFixed(2)} грн, повна сума до сплати ${(number - discount1)} грн`);
+// } else if (number >= 300 && number < 500) {
+//     console.log(`Ваша знижка буде ${discount2.toFixed(2)} грн, повна сума до сплати ${(number - discount2)} грн`);
+// } else if (number >= 500 && number < 1000) {
+//     console.log(`Ваша знижка буде ${discount3.toFixed(2)} грн, повна сума до сплати ${(number - discount3)} грн`);
+// } else {
+//     console.log("Нажаль для вас знижки не буде :(");
+// }
 
+
+// Task 8
+
+
+// let circle = +prompt("Введіть довжину кола: ");
+// let quadrate = +prompt("Введіть периметр квадрата: ");
+
+// let equation = quadrate / 4;
+
+
+// if (circle < equation) {
+//     console.log("Це коло може помістится в квадрат");
+// } else {
+//     console.log("Не поміститься в квадрат");
+// }
+
+
+// Task 9 
+
+
+// let questionCity = +prompt("Введіть цифру біля якої на вашу думку правильна відповідь \n\nОбласний центр Волинської області: \n 1.Ковель \n 2.Шацьк \n 3.Луцьк");
+// let questionMountain = +prompt("Введіть цифру біля якої на вашу думку правильна відповідь \n\nНайвища гора України: \n 1.Холм Слави \n 2.Говерла \n 3.Єврейка");
+// let questionRivne = +prompt("Введіть цифру біля якої на вашу думку правильна відповідь \n\nНайпопулярніше місце відпочинку рівнян: \n 1.Лебединка \n 2.Злата Плаза \n 3.Екватор");
+
+// let points = 0;
+
+// switch (questionCity) {
+//     case 3:
+//         points+=2;
+//         break;
+// }
+// switch (questionMountain) {
+//     case 2:
+//         points+=2;
+//         break;
+// }
+// switch (questionRivne) {
+//     case 1:
+//         points+=2;
+//         break;
+// }
+
+// console.log(points);
