@@ -2,88 +2,6 @@
 
 // Task 1
 
-// let userName = prompt("Введіть будь ласка ваше імя: ");
-// console.log("Вітаю, вас звати: ", userName);
-// alert(`Вітаю, вас зват ${userName}`)
-
-
-// Task 2
-
-// let numberYear = +prompt("Введіть рік вашого народження: ");
-// const year = 2023;
-// let result = year - numberYear;
-// alert(`Вітаю, вам ${result} років:)`)
-
-
-// Task 3
-
-// let lengthSquare = +prompt("Введіть будь ласка довжину сторони квадрата:");
-// let result = lengthSquare * 4;
-// alert(`Периметр квадрата вказаной вами довжини буде: ${result}`);
-
-
-// Task 4
-
-// let circleRadius = +prompt("Введіть будь ласка радіус кола: ");
-// const pi = 3.14;
-// let result = (circleRadius * circleRadius) * pi;
-// alert(`Площа вашого кругу: ${result} см`);
-
-
-// Task 5
-
-// let question1 = +prompt("Введіть відстань між містами у які ви хочете попасти: ");
-// let question2 = +prompt("За скільки часу ви туди хочете потрапити?");
-// let result = ~~(question1 / question2);
-// alert(`${result}км \nЗ такою швидкість вам потрібно їхати, щоб потрапити у ваше місце за стільки годин ${question2} `);
-
-
-// Task 6
-
-// let summDolar = +prompt("Введіть суму валюти: ");
-// const euro = 1.082;
-// let result = (summDolar / euro);
-// alert(`Сума в євро буде ${result}`);
-
-
-// Task 7
-
-// let flashMemory = +prompt("Введіть обсяг флешки в ГБ: ");
-// flashMemory = flashMemory * 1000;
-// let file = 820;
-// let result = ~~(flashMemory / 820);
-
-// alert(`Кількість файлів що вміститься на вашій флешці: ${result}`);
-
-
-// Task 8
-
-// let summClient = +prompt("Введіть вашу суму: ");
-// let priceChocolate = +prompt("Введіть вартість шоколадки: ");
-// let result = ~~(summClient / priceChocolate);
-// let formula = summClient - (result * priceChocolate);
-
-// alert(`Ви зможете купити ${result} шоколадок і отримаєте ${formula}грн здачі`);
-
-
-// Task 9
-
-// Ні як не можу зрозуміти суті самого завдання...
-
-
-// Task 10
-
-
-// let number = +prompt("Введіть ціле число: ");
-
-// let result = number % 2 == 0 ? "even" : "odd";
-// console.log(result);
-
-
-
-
-// Task 1
-
 // Робили на уроці
 
 
@@ -268,3 +186,88 @@
 // }
 
 // console.log(points);
+
+
+// Task 10
+
+
+let day = +prompt("Write the date: ");
+let month = +prompt("Write the month: ");
+let year = +prompt("Write the year: ");
+
+
+// let February = 2; // 28/29 днів
+
+// let January = 1; // 31 днів
+// let March = 3; // 31 днів
+// let May = 5; // 31 днів
+// let July = 7; // 31 днів
+// let August = 8; // 31 днів
+// let October = 10; // 31 днів
+// let December = 12; // 31 днів
+
+// let April = 4; // 30 днів
+// let June = 6; // 30 днів
+// let September = 9; // 30 днів
+// let November = 11; // 30 днів
+
+
+let result = (year%4==0 && year%100!=0) || year%400==0 ? 1 : 2;
+console.log(result);
+
+
+if (day > 31 || day < 1 || month < 1 || month > 12 || year < 1){ // Вибиває помилку, коли невірно введена дата
+    console.log("Невірно введена дата");
+} else if (month === 4 || month === 6 || month === 9 || month === 11 && day === 31){
+    console.log("Невірно введена дата"); // Вибиває помилку коли стоїть 31 число в парному місяці
+
+// *********************
+
+} else if (day === 31 && month === 12) { // Переключає на новий рік
+    day = 0;
+    month = 0;
+    day++;
+    month++;
+    year++;
+    console.log(`${day}.${month}.${year}`); // Кінець коду що переключає на новий рік
+
+// *********************
+
+} else if (day <= 28 && month === 2 && result === 1) { // Оброблення лютого, високосний чи не високосний
+    day++;
+    console.log(`${day}.${month}.${year}`);
+} else if(day === 28 && month === 2 && result === 2) {
+    day = 0;
+    day++;
+    month++;
+    console.log(`${day}.${month}.${year}`);
+} else if (month === 2 && day === 29 && result === 1) {
+    day = 0;
+    day++;
+    month++;
+    console.log(`${day}.${month}.${year}`);
+} else if (month === 2 && day === 29 && result === 2) {
+    console.log(`Невірно введена дата`); // Кінець оброблення лютого
+
+// *********************
+
+} else if (day < 30 && month === 4 || month === 6 || month === 9 || month === 11) { // Оброблення парних місяців: квітень, червень, вересень, листопад
+    day++;
+    console.log(`${day}.${month}.${year}`); // Важливо щоб рівняння з днем було перше рівнянь місяців, бо якщо перші будуть місяці, день не буде братися до уваги
+} else if (day > 30) {
+    day = 0;
+    day++;
+    month++;
+    console.log(`${day}.${month}.${year}`); // Кінець оброблення парних місяців
+
+// *********************
+
+} else if (day < 31) { // Оброблення не парних місяців: січень, березень, травень, Липень, Серпень, Жовтень, Грудень
+    day++;
+    console.log(`${day}.${month}.${year}`);
+} else if (day === 31) {
+    day = 0;
+    day++;
+    month++;
+    console.log(`${day}.${month}.${year}`); // Кінець оброблення не парних місяців
+}
